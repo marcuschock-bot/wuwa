@@ -20,5 +20,7 @@ while True:
             operator = input("Enter a valid operator (+, -, *, /): ")
     else:
         print("Invalid operator. Please try again.")
-        operator = input("Enter a valid operator (+, -, *, /): ")   
+        operator = input("Enter a valid operator (+, -, *, /): ")
+print("Finished computing, now printing result...")
+print (f"The result of {number_1} {operator} {number_2} is: {result}")
     
