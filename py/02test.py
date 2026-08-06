@@ -7,11 +7,7 @@ This makes Python perfect for beginners and experts alike.
 
 word_count = len(text.split())
 character_count = len(text)
-
-sentence_count = 0
-for char in text:
-    if char in ".!?":
-        sentence_count += 1
+sentence_count = text.count('.') + text.count('!') + text.count('?')
 
 print("Word Count : ", word_count)
 print("Character Count : ", character_count)

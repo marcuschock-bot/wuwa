@@ -31,3 +31,17 @@ for student, subj, score in grades:
 
 if not found:
     print("No grade found for that student and subject.")
+
+# name2 = set()
+# subject2 = set()
+# for name, subject, score in grades:
+#     name2.add(name)
+#     subject2.add(subject)
+# print(f"Unique students: {name2}")
+# print(f"Unique subjects: {subject2}")
+
+# alices_grades = []
+# for score in grades:
+#     if score[0] == "Alice":
+#         alices_grades.append(score[2])
+# print(f"Alice's grades: {alices_grades}")

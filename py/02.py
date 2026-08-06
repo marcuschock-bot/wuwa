@@ -40,3 +40,19 @@ if __name__ == "__main__":
     print(f"Words: {result['words']}")  # f-string formatting
     print(f"Characters: {result['characters']}")
     print(f"Sentences: {result['sentences']}")
+
+name = "Alice"
+age = 30
+message_1 = f"My name is {name} and I am {age} years old." #example for f-string formatting
+print(message_1)
+
+# Exercise 1 done by marcus
+text = """Python is a powerful programming language. It's easy to learn
+and versatile!
+You can use Python for web development, data science, and
+automation. The syntax is clean and readable.
+This makes Python perfect for beginners and experts alike.
+"""
+print("Word Count : ", len(text.split())) #count the number of words in the text
+print ("Character Count : ", len(text)) #count the number of characters in the text
+print ("Sentence Count : ", len(re.findall(r"[.!?]+", text))) #count the number of sentences in the text
