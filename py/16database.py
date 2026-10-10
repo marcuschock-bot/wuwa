@@ -1,24 +1,16 @@
-#marcuschock_db_user
-#H2lgHPxF5nrQyB43
-
 from pymongo import MongoClient
 from datetime import datetime
 from bson.objectid import ObjectId
 from dotenv import load_dotenv
-from pathlib import Path
 import os
 
-env_path = Path(__file__).resolve().parent.parent / "Scripts" / "atlas-credentials.env"
-load_dotenv(dotenv_path=env_path) #load environment variables from .env file
+load_dotenv()  # Load environment variables from .env file
 
-mongo_uri = os.getenv('MONGODB_URI') or os.getenv('MONGODB_ATLAS_CLUSTER_URI')
+mongo_uri = os.getenv('MONGODB_ATLAS_CLUSTER_URI')
 
 class DatabaseManager:
-    def __init__(self, db_name='example_db', connection_string=None):
-        connection_string = connection_string or mongo_uri
-        if not connection_string:
-            raise ValueError("No MongoDB connection string found. Check the env file path and variable name.")
-        self.client = MongoClient(connection_string, serverSelectionTimeoutMS=5000)
+    def __init__(self, db_name='example_db', connection_string=mongo_uri):
+        self.client = MongoClient(connection_string)
         self.db = self.client[db_name]
         self.users_collection = self.db.users
         self.posts_collection = self.db.posts
@@ -221,4 +213,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
